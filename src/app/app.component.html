@@ -1,0 +1,16 @@
+<mat-toolbar class="main-toolbar" color="primary">
+    <mat-toolbar-row>
+<!--        <button mat-icon-button>-->
+<!--        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>-->
+<!--        </button>-->
+        <h1>Photos</h1>
+        <span class="menu-spacer"></span>
+        <div>
+            <a mat-button [routerLink]="'photos'">Photos</a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
