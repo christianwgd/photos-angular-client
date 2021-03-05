@@ -10,7 +10,7 @@ import { Photo } from '../../services/photos';
 export class PhotoListComponent implements OnInit {
 
   photos = new Array<Photo>();
-  displayedColumns: string[] = ['id', 'text', 'kategorie', 'icon'];
+  displayedColumns: string[] = ['id', 'name', 'url'];
 
   constructor( photosService: PhotosService ) {
     photosService.getPhotosList().subscribe(response => {
