@@ -7,16 +7,16 @@ import { PhotoListComponent } from './components/photos-list/photo-list.componen
 
 const routes: Routes = [
   {
-    path: 'photos/photos/:id',
-    component: PhotoGetComponent
+    path: '',
+    component: PhotoListComponent
   },
   {
     path: 'photos/photos',
     component: PhotoListComponent
   },
   {
-    path: '',
-    component: PhotoListComponent
+    path: 'photos/photo/:id',
+    component: PhotoGetComponent
   }
 ];
 

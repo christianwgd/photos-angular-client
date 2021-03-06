@@ -14,13 +14,14 @@ export class PhotosService {
   constructor(private http: HttpClient) { }
 
   getPhotosList(): Observable<Photo[]> {
-
-
     const url = this.baseUrl + '/photos/';
     return this.http.get<Photo[]>(url);
   }
 
   getPhoto(id) {
-    return  this.http.get(`${this.baseUrl}/${id}`);
+    console.log('getPhoto');
+    console.log(id);
+    const url = this.baseUrl + '/photo/';
+    return  this.http.get(`${url}${id}`);
   }
 }

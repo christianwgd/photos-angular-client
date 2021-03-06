@@ -10,7 +10,7 @@ import { Photo } from '../../services/photos';
 export class PhotoListComponent implements OnInit {
 
   photos = new Array<Photo>();
-  displayedColumns: string[] = ['id', 'name', 'url'];
+  displayedColumns: string[] = ['id', 'name', 'imagefile'];
 
   constructor( photosService: PhotosService ) {
     photosService.getPhotosList().subscribe(response => {
@@ -18,7 +18,7 @@ export class PhotoListComponent implements OnInit {
         return new Photo(
           item.id,
           item.name,
-          item.url
+          item.imagefile
         );
       });
     });

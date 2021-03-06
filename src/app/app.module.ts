@@ -11,6 +11,7 @@ import { PhotosService } from './services/photos.service';
 import { PhotoListComponent } from './components/photos-list/photo-list.component';
 import { PhotoGetComponent } from './components/photo-get/photo-get.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
