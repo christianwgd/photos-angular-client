@@ -1,4 +1,13 @@
-table {
-    width: 90%;
-    margin: 0 auto;
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+img {
+  object-fit: cover;
+  border: none;
+  padding: 0;
 }
