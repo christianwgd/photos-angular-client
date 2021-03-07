@@ -6,8 +6,12 @@
   width: 200px;
 }
 
+mat-card-content {
+  text-align: center;
+}
+
 img {
   object-fit: cover;
-  border: none;
-  padding: 0;
+  height: 200px;
+  max-width: 300px;
 }
