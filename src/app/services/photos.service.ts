@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Photo } from './photos';
 
@@ -18,10 +18,9 @@ export class PhotosService {
     return this.http.get<Photo[]>(url);
   }
 
-  getPhoto(id) {
-    console.log('getPhoto');
-    console.log(id);
-    const url = this.baseUrl + '/photo/';
-    return  this.http.get(`${url}${id}`);
+  getPhoto(id): Observable<Photo> {
+    console.log('id in getPhoto', id);
+    const url = this.baseUrl + '/photos/';
+    return this.http.get<Photo>(`${url}${id}`);
   }
 }

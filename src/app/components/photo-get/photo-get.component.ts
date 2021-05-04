@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
 import {Photo} from "../../services/photos";
 import {PhotosService} from "../../services/photos.service";
 import {ActivatedRoute} from "@angular/router";
@@ -10,22 +9,22 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./photo-get.component.css']
 })
 export class PhotoGetComponent implements OnInit {
-  currentPhoto = null;
+  currentPhoto: Photo;
   id = null;
   private route: ActivatedRoute;
-
+  private photosService: PhotosService;
 
   constructor( photosService: PhotosService, route: ActivatedRoute ) {
-    photosService.getPhoto(this.id).subscribe(photo => {
-        this.currentPhoto = photo;
-    });
+    this.route = route;
+    this.photosService = photosService;
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      console.log('ngOnInit');
-      console.log(this.id)
+      this.photosService.getPhoto(this.id).subscribe(photo => {
+        this.currentPhoto = photo;
+      });
     });
   }
 
