@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Photo} from "../../services/photos";
+import {Photo} from "../../models/photos";
 import {PhotosService} from "../../services/photos.service";
 import {ActivatedRoute} from "@angular/router";
 
