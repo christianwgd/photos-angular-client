@@ -18,12 +18,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PhotosMetaComponent } from './components/photos-meta/photos-meta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotoGetComponent,
-    PhotoListComponent
+    PhotoListComponent,
+    PhotosMetaComponent
   ],
   imports: [
     BrowserModule,

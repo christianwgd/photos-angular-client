@@ -1,0 +1,25 @@
+.content {
+  margin: 1rem;
+}
+
+.mat-card {
+  width: 100%;
+}
+
+tr.mat-row {
+  height: 3rem;
+}
+
+tr.mat-row th {
+  width: 15%;
+  padding-right: 5px;
+}
+
+
+.mat-header-cell {
+  text-align: right;
+}
+
+img {
+  max-width: 100%;
+}

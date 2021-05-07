@@ -1,0 +1,46 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="50%" fxFlex.lt-md="100%"  fxLayoutAlign="stretch">
+      <mat-card class="mat-elevation-z4">
+        <table class="mat-table" >
+          <tr class="mat-row">
+            <th class="mat-header-cell">Name</th>
+            <td class="mat-cell">{{ photoMeta.name }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Datum/Zeit</th>
+            <td class="mat-cell">{{ photoMeta.timestamp }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Geladen</th>
+            <td class="mat-cell">{{ photoMeta.uploaded }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Geladen von</th>
+            <td class="mat-cell">{{ photoMeta.uploaded_by }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Ort</th>
+            <td class="mat-cell">{{ photoMeta.address.formatted }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Ereignis</th>
+            <td class="mat-cell">{{ photoMeta.event }}</td>
+          </tr>
+          <tr class="mat-row">
+            <th class="mat-header-cell">Tags</th>
+            <td class="mat-cell">{{ photoMeta.tags }}</td>
+          </tr>
+        </table>
+        <a mat-stroked-button href="" class="mat-row-link">Zurück</a>
+      </mat-card>
+    </div>
+
+    <div fxFlex="50%" fxFlex.lt-md="100%"  fxLayoutAlign="stretch">
+      <mat-card class="mat-elevation-z4">
+        <img src="http://localhost:8000/media/{{ photoMeta.imagefile }}" alt="{{ photoMeta.name}}"/>
+      </mat-card>
+    </div>
+  </div>
+
+</div>
