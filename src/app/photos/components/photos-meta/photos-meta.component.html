@@ -9,11 +9,15 @@
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Datum/Zeit</th>
-            <td class="mat-cell">{{ photoMeta.timestamp }}</td>
+            <td class="mat-cell">
+              {{ photoMeta.timestamp | date: "medium" : 'MESZ' : 'de-DE' }}
+            </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Geladen</th>
-            <td class="mat-cell">{{ photoMeta.uploaded }}</td>
+            <td class="mat-cell">
+              {{ photoMeta.uploaded | date: "medium" : 'MESZ' : 'de-DE' }}
+            </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Geladen von</th>

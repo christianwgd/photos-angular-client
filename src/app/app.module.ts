@@ -22,6 +22,11 @@ import { PhotosMetaComponent } from './photos/components/photos-meta/photos-meta
 import {MatCardModule} from "@angular/material/card";
 import {EventGetComponent} from "./event/components/event-get/event-get.component";
 
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe);
+
 @NgModule({
   declarations: [
     AppComponent,
