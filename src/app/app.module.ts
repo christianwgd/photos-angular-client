@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { PhotosService } from './services/photos.service';
-import { PhotoListComponent } from './components/photos-list/photo-list.component';
-import { PhotoGetComponent } from './components/photo-get/photo-get.component';
+import { PhotosService } from './photos/services/photos.service';
+import { PhotoListComponent } from './photos/components/photos-list/photo-list.component';
+import { PhotoGetComponent } from './photos/components/photo-get/photo-get.component';
 
 import { MaterialModule } from './material.module';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,14 +18,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PhotosMetaComponent } from './components/photos-meta/photos-meta.component';
+import { PhotosMetaComponent } from './photos/components/photos-meta/photos-meta.component';
+import {MatCardModule} from "@angular/material/card";
+import {EventGetComponent} from "./event/components/event-get/event-get.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotoGetComponent,
     PhotoListComponent,
-    PhotosMetaComponent
+    PhotosMetaComponent,
+    EventGetComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { PhotosMetaComponent } from './components/photos-meta/photos-meta.compon
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
+    MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,

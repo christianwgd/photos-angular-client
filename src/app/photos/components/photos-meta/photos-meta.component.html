@@ -25,7 +25,9 @@
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Ereignis</th>
-            <td class="mat-cell">{{ photoMeta.event }}</td>
+            <td class="mat-cell">
+              <app-event-get [eventUrl]=photoMeta.event></app-event-get>
+            </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Tags</th>
