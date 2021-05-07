@@ -10,18 +10,20 @@
           <tr class="mat-row">
             <th class="mat-header-cell">Datum/Zeit</th>
             <td class="mat-cell">
-              {{ photoMeta.timestamp | date: "medium" : 'MESZ' : 'de-DE' }}
+              {{ photoMeta.timestamp | date: "medium" : 'CET' : 'de-DE' }}
             </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Geladen</th>
             <td class="mat-cell">
-              {{ photoMeta.uploaded | date: "medium" : 'MESZ' : 'de-DE' }}
+              {{ photoMeta.uploaded | date: "medium" : 'CET' : 'de-DE' }}
             </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Geladen von</th>
-            <td class="mat-cell">{{ photoMeta.uploaded_by }}</td>
+            <td class="mat-cell">
+              <app-user-get [userUrl]=photoMeta.uploaded_by.toString()></app-user-get>
+            </td>
           </tr>
           <tr class="mat-row">
             <th class="mat-header-cell">Ort</th>
@@ -30,7 +32,7 @@
           <tr class="mat-row">
             <th class="mat-header-cell">Ereignis</th>
             <td class="mat-cell">
-              <app-event-get [eventUrl]=photoMeta.event></app-event-get>
+              <app-event-get [eventUrl]=photoMeta.event.toString()></app-event-get>
             </td>
           </tr>
           <tr class="mat-row">

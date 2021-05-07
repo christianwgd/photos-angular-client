@@ -24,6 +24,7 @@ import {EventGetComponent} from "./event/components/event-get/event-get.componen
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import {UserGetComponent} from "./user/components/user-get/user-get.component";
 
 registerLocaleData(localeDe);
 
@@ -33,7 +34,8 @@ registerLocaleData(localeDe);
     PhotoGetComponent,
     PhotoListComponent,
     PhotosMetaComponent,
-    EventGetComponent
+    EventGetComponent,
+    UserGetComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'photos/photos', component: PhotoListComponent },
   { path: 'photos/photo/:id', component: PhotoGetComponent },
   { path: 'photos/meta/:id', component: PhotosMetaComponent },
-  // { path: 'photos/event/:id', component: EventGetComponent }
+  // { path: 'photos/event/:id', component: EventGetComponent },
+  // { path: 'photos/user/:id', component: UserGetComponent }
 ];
 
 @NgModule({
