@@ -39,7 +39,7 @@
             <th class="mat-header-cell">Tags</th>
 <!--            <td class="mat-cell">{{ photoMeta.tags }}</td>-->
             <td class="mat-cell">
-              <mat-chip-list cdkDropList cdkDropListOrientation="horizontal">
+              <mat-chip-list>
                 <mat-chip *ngFor="let tag of photoMeta.tags">
                   <app-tag-get [tagUrl]="tag.toString()"></app-tag-get><br/>
                 </mat-chip>
