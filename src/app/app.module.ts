@@ -26,6 +26,7 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import {UserGetComponent} from "./user/components/user-get/user-get.component";
 import {TagGetComponent} from "./tag/components/tag-get/tag-get.component";
+import {AuthComponent} from "./auth/components/auth/auth.component";
 
 registerLocaleData(localeDe);
 
@@ -37,7 +38,8 @@ registerLocaleData(localeDe);
     PhotosMetaComponent,
     EventGetComponent,
     UserGetComponent,
-    TagGetComponent
+    TagGetComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
