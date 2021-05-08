@@ -23,3 +23,9 @@ tr.mat-row th {
 img {
   max-width: 100%;
 }
+
+.buttons {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
