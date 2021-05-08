@@ -15,9 +15,7 @@ export class Photo {
 export class Address {
   public formatted: string;
 
-  constructor(display_name: string, formatted: string) {
-    this.formatted = this.formatted;
-  }
+  constructor() {  }
 }
 
 export class User {
@@ -53,12 +51,12 @@ export class PhotoMeta {
   public uploaded_by: User;
   public address: Address;
   public event: Event;
-  public tags: Tag;
+  public tags: Tag[];
 
   constructor(
     imagefile: string, name: string, timestamp: string,
     uploaded: string, uploaded_by: User, address: Address,
-    event: Event, upload: string, tags: Tag
+    event: Event, upload: string, tags: Tag[]
   ) {
     this.imagefile = imagefile;
     this.name = name;
