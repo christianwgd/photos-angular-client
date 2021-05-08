@@ -11,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class AuthComponent implements OnInit {
 
   loginForm: FormGroup;
+  isLoginFailed: boolean = false;
+  errorMessage: string = '';
 
   constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
@@ -30,12 +32,18 @@ r
   login() {
     console.log('login');
     this.authService.getAuthToken(this.f.username.value, this.f.password.value)
-    .subscribe(token => {
-      console.log(token);
-      if (token) {
-        this.router.navigate(['photos/photos']);
-      }
+    .subscribe(
+      token => {
+        console.log('token', token);
+        if (token) {
+          this.router.navigate(['photos/photos']);
+        }
+      },
+    error => {
+      console.log(error);
+      console.log('login failed');
+      this.isLoginFailed = true;
+      this.errorMessage = 'Login fehlgeschlagen'
     });
   }
-
 }

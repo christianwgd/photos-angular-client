@@ -10,6 +10,10 @@
     <input matInput type="password" id="password" placeholder="Password" formControlName="password" required>
   </mat-form-field>
 
+  <mat-error class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+    {{ errorMessage }}
+  </mat-error>
+
   <div class="actions">
     <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Anmelden</button>
   </div>
