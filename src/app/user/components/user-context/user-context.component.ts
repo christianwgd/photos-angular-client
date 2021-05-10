@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
 import {User} from "../../user";
+import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 
 @Component({
-  selector: 'app-user-get',
-  templateUrl: './user-get.component.html',
-  styleUrls: ['./user-get.component.css']
+  selector: 'app-user-context',
+  templateUrl: './user-context.component.html',
+  styleUrls: ['./user-context.component.css']
 })
-export class UserGetComponent implements OnInit {
+export class UserContextComponent implements OnInit {
 
   @Input() userUrl: string;
 
@@ -23,10 +23,12 @@ export class UserGetComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.userService.getUserById(this.userUrl).subscribe(user => {
-        this.user = user;
-      })
+      const userAuth = JSON.parse(sessionStorage.getItem('userAuth'));
+      if (userAuth) {
+        this.userService.getUserByUsername(userAuth.username).subscribe(user => {
+          this.user = user;
+        })
+      }
     })
   }
-
 }

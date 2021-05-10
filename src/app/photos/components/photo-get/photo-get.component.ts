@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PhotoGetComponent implements OnInit {
   currentPhoto: Photo;
-  id = null;
+  id: number = null;
   private route: ActivatedRoute;
   private photosService: PhotosService;
 

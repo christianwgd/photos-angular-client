@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { PhotosService } from './photos/services/photos.service';
 import { PhotoListComponent } from './photos/components/photos-list/photo-list.component';
@@ -27,6 +27,9 @@ import localeDe from '@angular/common/locales/de';
 import {UserGetComponent} from "./user/components/user-get/user-get.component";
 import {TagGetComponent} from "./tag/components/tag-get/tag-get.component";
 import {AuthComponent} from "./auth/components/auth/auth.component";
+import {TokenInterceptor} from "./auth/token.interceptor";
+import {AuthService} from "./auth/services/auth.service";
+import {UserContextComponent} from "./user/components/user-context/user-context.component";
 
 registerLocaleData(localeDe);
 
@@ -38,6 +41,7 @@ registerLocaleData(localeDe);
     PhotosMetaComponent,
     EventGetComponent,
     UserGetComponent,
+    UserContextComponent,
     TagGetComponent,
     AuthComponent
   ],
@@ -56,7 +60,15 @@ registerLocaleData(localeDe);
     MatIconModule,
     MatTableModule,
   ],
-  providers: [PhotosService],
+  providers: [
+    AuthService,
+    PhotosService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

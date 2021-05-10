@@ -26,9 +26,6 @@ export class PhotosMetaComponent implements OnInit {
       this.photosService.getPhotoMeta(this.id).subscribe(metadata => {
         this.photoMeta = metadata;
         this.photoMeta.address.formatted = metadata.address.formatted;
-        for (var tag in this.photoMeta.tags) {
-          console.log(this.photoMeta.tags[tag]);
-        }
       });
     });
   }

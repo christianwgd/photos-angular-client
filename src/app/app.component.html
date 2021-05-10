@@ -5,9 +5,14 @@
 <!--        </button>-->
         <h1>Fotos</h1>
         <span class="menu-spacer"></span>
-        <div>
-            <a mat-button [routerLink]="''">Fotos</a>
-        </div>
+        <a mat-button [routerLink]="''">Fotos</a>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <app-user-context></app-user-context>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
 
