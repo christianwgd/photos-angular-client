@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import {TokenAuth} from "../../auth";
@@ -11,14 +11,14 @@ import {TokenAuth} from "../../auth";
 })
 export class AuthComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   isLoginFailed: boolean = false;
   errorMessage: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
   ) { }
 

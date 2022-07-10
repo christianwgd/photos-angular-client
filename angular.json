@@ -118,5 +118,7 @@
       }
     }
   },
-  "defaultProject": "photos"
+  "cli": {
+    "analytics": false
+  }
 }
